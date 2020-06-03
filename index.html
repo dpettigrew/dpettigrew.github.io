@@ -1,1 +1,97 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<script>
+function walmartUICommand(requestString) {
+  WalmartMobile.uiCommand(requestString);
+}
+
+function walmartSignIn() {
+  WalmartMobile.signin("isSignedIn", "isSignedOut");
+}
+
+function walmartGetUserId() {
+  return prompt("func=userId");
+}
+
+function getUserId() {
+  var userId = walmartGetUserId();
+  updateUserId(userId)
+}
+
+function updateStatus(statusString) {
+  console.log("Status: " + statusString)
+  document.getElementById("status").innerHTML = statusString;
+}
+
+function updateUserId(userIdString) {
+  console.log("User ID: " + userIdString)
+  document.getElementById("userId").innerHTML = userIdString;
+}
+
+function showNav() {
+  walmartUICommand("showNav");
+}
+
+function hideNav() {
+  walmartUICommand("hideNav");
+}
+
+function isSignedIn() { 
+  updateStatus("Signed in"); 
+}
+
+function isSignedOut() { 
+  updateStatus("Signed out");
+}
+
+function exitSparkCamp() {
+  walmartUICommand("exit");
+}
+</script>
+</head>
+<body>
+<header class="w3-container w3-card">
+	<h1>Walmart Spark Camp</h2>
+</header>
+
+<div class="w3-container">
+	<hr>
+	<div class="w3-cell-row">
+		<h3>Status</h3>
+	  	<div class="w3-cell w3-container">
+			<p id="status">Unknown</p>
+	  	</div>
+	</div>  
+	<hr>
+	<div class="w3-cell-row">
+		<h3>User ID</h3>
+	  	<div class="w3-cell w3-container">
+			<p id="userId">Unknown</p>
+	  	</div>
+	</div>  
+	<hr>
+	<div class="w3-cell-row">
+		<button type="button" onclick="hideNav()">Hide navigation bar</button>
+	</div>
+	<hr>
+	<div class="w3-cell-row">
+		<button type="button" onclick="showNav()">Show navigation bar</button>
+	</div>
+	<hr>
+	<div class="w3-cell-row">
+		<button type="button" onclick="walmartSignIn()">Sign in</button>
+	</div>
+	<hr>
+	<div class="w3-cell-row">
+		<button type="button" onclick="exitSparkCamp()">Exit</button>
+	</div>
+	<hr>
+	<div class="w3-cell-row">
+		<button type="button" onclick="getUserId()">Get User Id</button>
+	</div>
+</div>
+</body>
+</html> 
