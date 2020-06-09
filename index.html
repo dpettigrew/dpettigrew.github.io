@@ -50,6 +50,11 @@ function isSignedOut() {
 function exitSparkCamp() {
   walmartUICommand("exit");
 }
+
+function updateTitle() {
+  var newTitle = document.getElementById("title").value;
+  walmartUICommand("updateTitle:" + newTitle);
+}
 </script>
 </head>
 <body>
@@ -91,6 +96,12 @@ function exitSparkCamp() {
 	<hr>
 	<div class="w3-cell-row">
 		<button type="button" onclick="getUserId()">Get User Id</button>
+	</div>
+	<hr>
+	<div class="w3-cell-row">
+	    <label for="title">Title:</label> 
+  	    <input type="text" id="title" name="title"> 
+		<button type="button" onclick="updateTitle()">Update</button>
 	</div>
 </div>
 </body>
