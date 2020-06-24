@@ -58,7 +58,12 @@ function updateTitle() {
 
 function presentCollection() {
   var collectionId = document.getElementById("collectionId").value;
-  walmartUICommand("presentCollection:" + collectionId);
+  WalmartMobile.presentCollection(collectionId);
+}
+
+function routeDeepLink() {
+  var deepLink = document.getElementById("deepLink").value;
+  WalmartMobile.routeDeepLink(deepLink);
 }
 </script>
 <style>
@@ -118,6 +123,12 @@ body {
 	    <label for="collectionId">Collection Id:</label> 
   	    <input type="text" id="collectionId" name="collectionId"> 
 		<button type="button" onclick="presentCollection()">Present</button>
+	</div>
+	<hr>
+	<div class="w3-cell-row">
+	    <label for="deepLink">Deep link:</label> 
+  	    <input type="text" id="deepLink" name="deepLink" value="walmart://browse/aHR0cHM6Ly93d3cud2FsbWFydC5jb20vYnJvd3NlP2NhdF9pZD0zOTQ0Xzc3NjIyXzgzNzU5MDFfMTIzMDQxNQ=="> 
+		<button type="button" onclick="routeDeepLink()">Route</button>
 	</div>
 </div>
 </body>
